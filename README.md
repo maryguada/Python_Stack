@@ -1,4 +1,3 @@
-Coding-Dojo-Python 
 Course work from Coding Dojo's Python stack that includes the following:
 Python Fundamentals, Python OOP, Flask Fundamentals, Flask+MySQL and Django. 
 
