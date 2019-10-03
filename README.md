@@ -15,7 +15,7 @@ Executing full CRUD
 Log In & Registration with Validations
 
 Course Schedule: 
-Week 1: Intro to Python / OOP/ Intro to Flask Routing & Serving HTML
-Week 2: Session / Intro to Django/ Django Session/ Restful Routing
-Week 3: Deployment / Exam Prep
+Week 1: Intro to Python / OOP/ Intro to Flask Routing & Serving HTML ||
+Week 2: Session / Intro to Django/ Django Session/ Restful Routing ||
+Week 3: Deployment / Exam Prep / Exam ||
 Week 4: Project Week  
