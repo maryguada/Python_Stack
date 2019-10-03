@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Semi-Restful Users</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"crossorigin="anonymous">
+
+</head>
+<body> 
+
+    <section class = "jumbotron text-center">
+        <div class = "container">
+            <h1 class = "jumbotron-heading"> Show Page </h1>
+            <p class = "lead text muted"> 
+            </p>
+        </div>
+    </section> 
+
+    
+        <p> User: {{ one_us[0].id }}</p>
+        <p> Full Name: {{ one_us[0]['full_name'] }} </p>
+        <p> Email: {{ one_us[0]['email'] }} </p>
+
+        <form action='/users/new', method='get'>
+            <input class="button-1" type='submit' value='Home' class="button">
+        </form>
+    
+    
+        <form action="/users", method='get'>
+            <input class = "button-1" type='submit' value="Show All Users" class ="button">       
+        </form>
+
+    
+</body>
+</html>

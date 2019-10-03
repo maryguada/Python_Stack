@@ -1,0 +1,56 @@
+!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title> GOT Validations </title>
+   
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<body>
+
+    <h3>Show</h3>
+    <div class = "h4"> Name: {{ character[0].name}} </div>
+    <div class = "h4"> House: {{ character[0].house}} </div>
+    <div class = "h4"> Sigil: {{ character[0].sigil}} </div>
+    
+    
+    <h3> Edit Page </h3>
+    <form action = '/editProcess', method="POST">
+    <input type = "text" class ="form-control mb-2 col-6" name ="name" value ="{{ character[0].name}}">
+    {% with messages = get_flashed_messages(category_filter=["gotName"]) %}     <!-- declare a variable called messages -->
+    {% if messages %}                            <!-- check if there are any messages -->
+    {% for message in messages %}            <!-- loop through the messages -->
+    <p class ="text-danger">{{ message }}</p>                   <!-- display each message in a paragraph tag -->
+    {% endfor %}
+    {% endif %}
+    {% endwith %}
+
+
+    <input type = "text" class ="form-control mb-2 col-6"name ="house" value="{{ character[0].house}}">
+    {% with messages = get_flashed_messages(category_filter=["gotHouse"]) %}     <!-- declare a variable called messages -->
+    {% if messages %}                            <!-- check if there are any messages -->
+    {% for message in messages %}            <!-- loop through the messages -->
+    <p class ="text-danger">{{ message }}</p>                   <!-- display each message in a paragraph tag -->
+    {% endfor %}
+    {% endif %}
+    {% endwith %}
+
+    <input type = "text" class ="form-control mb-2 col-6" name ="sigil" value ="{{ character[0].sigil}}">
+    {% with messages = get_flashed_messages(category_filter=["gotSigil"]) %}     <!-- declare a variable called messages -->
+    {% if messages %}                            <!-- check if there are any messages -->
+    {% for message in messages %}            <!-- loop through the messages -->
+    <p class ="text-danger">{{ message }}</p>                   <!-- display each message in a paragraph tag -->
+    {% endfor %}
+    {% endif %}
+    {% endwith %}
+    
+    <input type = "hidden" name ="id" value ="{{character[0].id}}">
+    <input type = "submit" class="btn btn-secondary">
+    </form>
+
+
+    
+</body>
+</html> 

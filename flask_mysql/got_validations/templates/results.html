@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title> GOT Validations </title>
+   
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <style> 
+    
+    </style>
+    
+</head>
+<body> 
+    <h3> Game of Thrones Characters </h3>
+    <a href ="/logout" class ="float-right">Logout</a>
+    <h1>Welcome to your home page! <span class="text-capitalize">{{ user.first_name }}</span></h1>
+    <a href ="/show-create" class = "btn btn-secondary" > Create </a>
+
+    <table class="table">
+        <thead>
+            <tr>
+            <th scope="col">#</th>
+            <th scope="col">Name</th>
+            <th scope="col">House</th>
+            <th scope="col">Sigil</th>
+            <th scope="col">Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for character in characters %}
+            <tr>
+            <th scope="row">{{ character.id }}</th>
+            <td>{{ character.name }} </td>
+            <td>{{ character.house }} </td>
+            <td>{{ character.sigil }}</td>
+            <td>
+            
+                {% if character.user_id == user.id %}
+             <a href = "" > Edit </a></td>
+             <a href ="" > Delete </a>
+            </td>
+
+            {% endif %}
+            <a href = "/show/{{ character.id }}" > Show </a>
+            
+            </tr>
+            {% endfor %}
+            
+        </tbody>
+    </table>
+
+</body>
+</html>

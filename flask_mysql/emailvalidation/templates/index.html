@@ -1,0 +1,26 @@
+<!doctype html>
+<html>
+<head>
+    
+    <title> Email Validation w/ DB</title>
+    
+</head>
+<body>
+    <div class='container'>
+        <h1> </h1>
+        <form action='/create' method='POST'>
+            {% with errors = get_flashed_messages(category_filter=["emailError"]) %}
+                {% if errors %}
+                <div class="error">
+                    {%- for msg in errors %}
+                    <p>{{ msg }}</p>
+                    {% endfor -%}
+                </div>
+            {% endif %}
+            {% endwith %}
+            <label for='email'>Email: <input type='text', name='email'/></label>
+            <input type='submit' name='Submit'/>
+        </form>
+    </div>
+</body>
+</html>

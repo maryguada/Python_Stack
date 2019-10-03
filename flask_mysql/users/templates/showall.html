@@ -1,0 +1,50 @@
+<!DOCTYPE html></body>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Show All Users</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"crossorigin="anonymous">
+
+
+</head>
+<body>
+
+    <section class = "jumbotron text-center">
+            <div class = "container">
+                <h1 class = "jumbotron-heading"> Show All Page </h1>
+                <p class = "lead text muted"> 
+                </p>
+            </div>
+        </section> 
+    <h1 class="text-center"> All Users </h1>
+
+    <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Full Name</th>
+                <th scope="col">Email</th>
+                <th scope="col">Action</th>
+              </tr>
+            </thead>
+            <tbody>
+            {% for one_user in all_users %}    
+                <tr>
+                <th scope="row">{{ one_user ["id"]}}</th>
+                <td>{{ one_user ["full_name"] }}</td>
+                <td>{{ one_user ["email"] }} </td>
+                <td><a href ="/delete/{{ one_user.id }}" class="btn btn-secondary"> Delete </a></td>
+                <td><a href ="/edit/{{ one_user.id}}" class="btn btn-secondary" > Edit</a></td>
+                </tr>
+
+            {% endfor %}
+
+
+        </tbody>
+    </table>
+
+
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Semi-Restful Users</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"crossorigin="anonymous">
+
+</head>
+<body>
+
+    <section class = "jumbotron text-center">
+        <div class = "container">
+            <h1 class = "jumbotron-heading"> All Users </h1>
+            <p class = "lead text muted"> 
+            </p>
+        </div>
+    </section> 
+
+
+    <h4 class ="text-center"> ADD USERS </h4>
+
+    <form action = "/users/create", method = "POST">
+
+        <div class="form-group">
+            <p> FULL NAME </p>
+            <input type="text" class="form-control" name="full_name" placeholder="Enter Full Name">
+
+        <div class="form-group">
+            <p> EMAIL </p>
+            <input type="text" class="form-control" name="email" placeholder="Enter Email">
+
+    
+        <input type = "submit" value = "Create User">
+        </div>  
+
+    </form>
+
+</body>
+</html>

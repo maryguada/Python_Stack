@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Add A Job Page</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <style> 
+
+        .row {
+            padding: 70px; 
+            margin: auto; 
+        }
+    
+    </style>
+</head>
+<body>
+
+    <div class = "row">
+    
+
+    <form action ="/create_process" method="POST"> 
+        <h1 class="h4 mb-4"> Add A Job </h1>
+        
+        {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+        <ul class=flashes>
+        {% for category, message in messages %}
+        <li class="{{ category }}">{{ message }}</li>
+        {% endfor %}
+        </ul>
+        {% endif %}
+        {% endwith %}
+                
+
+        {% with messages = get_flashed_messages(category_filter = "job_error") %}    
+        {% if messages %}                            
+        {% for message in messages %}            
+        <p class ="text-danger">{{message}}</p>           
+        {% endfor %}
+        {% endif %}
+        {% endwith %}
+        <input type ="text" class="form-control mb-4"  name ="job" placeholder = "Job">
+        
+
+        {% with messages = get_flashed_messages(category_filter= "loc_error") %}
+        {% if messages %}                          
+        {% for message in messages %}           
+        <p class ="text-danger">{{message}}</p>                   
+        {% endfor %}
+        {% endif %}
+        {% endwith %}     
+
+        <input type ="text" class ="form-control mb-4" name = "location" placeholder= "Location">
+        <input type= "hidden" name="id" value="Add Job">
+        
+        <input type ="submit" class = "btn btn-primary">
+        
+ 
+    </form>
+    </div>
+</body>
+</html>

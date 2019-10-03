@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>C&R PETS</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+</head>
+<body>
+
+    <h1>C & R Pets</h1>
+    <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Name</th>
+                <th scope="col">Type</th>
+                <th scope="col">Action</th>
+              </tr>
+            </thead>
+            <tbody>
+
+            {% for pet in pets%}
+              <tr>
+                <th scope="row"> {{ pet.id }}</th>
+                <td> {{ pet ['name']}}</td>
+                <td> {{ pet ['type']}}</td>
+                <td><a href="/delete/{{ pet.id }}" class="btn btn-danger"> Delete </a> </td>
+                <td><a href="/edit/{{ pet.id }}" class="btn btn-success" > Edit </a> </td>
+              </tr>
+
+            {% endfor %}
+       
+              
+            </tbody>
+    </table>
+    <hr>
+    <h3> Create A Pet </h3>
+
+    <form action ="/createPet" method="POST"> 
+        <input type ="text" class="form-control mb-2 col-6" placeholder="Name" name ="name">
+        <input type ="text" class ="form-control mb-2 col-6" placeholder="Type" name = "type"> 
+        
+        <input type ="submit" class = "btn btn-primary">
+ 
+    </form>
+        
+
+
+    
+</body>
+</html>

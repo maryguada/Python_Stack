@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title> Dashbord </title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    
+</head>
+<body>
+    <div class = "container">
+        <a href = "/logout" class="float-right"> Logout</a>
+        <h1> Welcome to your Dashboard <span class="text-capitalize">{{ user[0]['first_name']}}! </span></h1>
+        <a href = "/add_job" class = "btn btn-warning"> Add A New Job Listing </a>
+        <table class="table">
+            
+                <tr>
+                <th scope="col"># ID</th>
+                <th scope="col">Job </th>
+                <th scope="col">Location</th>
+                <th scope="col">Actions</th>
+
+                <tbody>
+
+                {% for job in jobs %}
+
+                    {% if user[0].user_id != job.user_posted_id %}
+                    <tr>
+                    <th scope="row">{{ job.id }}</th>
+                    <td>{{ job.job }}</td>
+                    <td>{{ job.location }}</td>
+                    <td>
+                        {% if job.user_id == user[0].id %} 
+                        <a href = "/edit/{{ job.id }}"class = "btn btn-info"> Edit </a>
+                        <a href = "/delete/{{ job.id }}"class = "btn btn-danger"> Delete </a>
+                        {% endif %}
+
+                        <a href = "/show/{{ job.id }}"class = "btn btn-secondary"> Show </a>
+                        <a href = "/add/{{ job.id }}"class = "btn btn-success"> Add Job to My List </a>
+                
+        
+                    </td>
+                    </tr>
+                    {% endif %}
+                {% endfor %}
+                </tbody>
+        </table>
+        </div>
+
+        <div class="container">
+        <table class="table">
+            <h1>{{ user[0]['first_name']}}'s Job List </h1> 
+            
+                <tr>
+                <th scope="col"># ID</th>
+                <th scope="col">Job </th>
+                <th scope="col">Location</th>
+                <th scope="col">Actions</th>
+
+                <tbody>
+
+                {% for job in jobs %}
+
+                    {% if user[0].user_id == job.user_posted_id %}
+                    <tr>
+                    <th scope="row">{{ job.id }}</th>
+                    <td>{{ job.job }}</td>
+                    <td>{{ job.location }}</td>
+                    <td> 
+
+                        {% if jobs.user_id == user[0].id %}
+                        <a href = "/edit/{{ job.id }}"class = "btn btn-info"> Edit </a>
+                        <a href = "/delete/{{ job.id }}"class = "btn btn-danger"> Delete </a>
+                        {% endif %}
+
+                        <a href = "/show/{{ job.id }}"class = "btn btn-secondary"> Show </a>
+                        <a href = "/remove/{{ job.id }}"class = "btn btn-success"> Remove Job from My List </a>
+                
+                    </td>
+                    </tr>
+                    {% endif %}
+                {% endfor %}
+                </tbody>
+        </table>
+        </div>
+
+</body>

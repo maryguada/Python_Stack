@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title> GOT Validations </title>
+   
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<body>
+    <h3> Create A Game of Thrones Character </h3>
+    <form action = '/process', method="POST">
+    <input type = "text" class ="form-control mb-2 col-6" name ="name" placeholder="Name">
+    {% with messages = get_flashed_messages(category_filter=["gotName"]) %}     <!-- declare a variable called messages -->
+    {% if messages %}                            <!-- check if there are any messages -->
+    {% for message in messages %}            <!-- loop through the messages -->
+    <p class ="text-danger">{{ message }}</p>                   <!-- display each message in a paragraph tag -->
+    {% endfor %}
+    {% endif %}
+    {% endwith %}
+
+
+    <input type = "text" class ="form-control mb-2 col-6"name ="house" placeholder="House">
+    {% with messages = get_flashed_messages(category_filter=["gotHouse"]) %}     <!-- declare a variable called messages -->
+    {% if messages %}                            <!-- check if there are any messages -->
+    {% for message in messages %}            <!-- loop through the messages -->
+    <p class ="text-danger">{{ message }}</p>                   <!-- display each message in a paragraph tag -->
+    {% endfor %}
+    {% endif %}
+    {% endwith %}
+
+    <input type = "text" class ="form-control mb-2 col-6" name ="sigil" placeholder="Sigil">
+    {% with messages = get_flashed_messages(category_filter=["gotSigil"]) %}     <!-- declare a variable called messages -->
+    {% if messages %}                            <!-- check if there are any messages -->
+    {% for message in messages %}            <!-- loop through the messages -->
+    <p class ="text-danger">{{ message }}</p>                   <!-- display each message in a paragraph tag -->
+    {% endfor %}
+    {% endif %}
+    {% endwith %}
+    
+    <input type = "submit" class="btn btn-secondary">
+    </form>
+
+
+    
+</body>
+</html> 

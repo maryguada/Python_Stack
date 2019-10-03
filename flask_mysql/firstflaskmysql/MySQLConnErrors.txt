@@ -1,0 +1,17 @@
+FIRST ERROR 
+under server.py : make sure that you are connecting to mysql server that you put down the correct file name. 
+For example: 
+from flask import Flask, render_template.
+### pay attention to the name of your file name on the next line
+***
+from mysqlconnection import connectToMySQL 
+
+
+SECOND ERROR 
+when refering to database, make sure you know the appropriate name of database. 
+for example. 
+
+@app.route('/)
+def index():
+    mysql = connectToMySQL(ENTER THE CORRECT DATABASE NAME ON HERE) # call the function, passing the name of the db.
+    friends = mysql.query_db(SELECT * FROM friends;')# call the query db function, pass in the query as a string. 

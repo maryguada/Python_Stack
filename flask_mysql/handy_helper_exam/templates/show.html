@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title> Show </title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <style> 
+        .container {
+            padding: 70px; 
+            margin: auto; 
+        }
+
+    </style>
+</head>
+<body>
+    <div class = "container">
+        <h2> Show Job Details </h2>
+
+        <p> Job: {{ job[0].job }}</p>
+        <p> Location: {{ job[0].location }}</p>
+        <a href = /addtoJobs class ="btn btn-warning"> Add to My Jobs </a>
+        <a href = /dashboard class ="btn btn-success"> Back to Dashboard</a>
+        
+    </div>
+</body>
+</html>
