@@ -2,9 +2,9 @@ Course work from Coding Dojo's Python stack that includes the following:
 Python Fundamentals, Python OOP, Flask Fundamentals, Flask+MySQL and Django. 
 
 Technologies/Frameworks: 
-Python 
-MySQL
-Flask Framework
+Python, 
+MySQL,
+Flask Framework,
 Django Framework 
 
 Skills: 
