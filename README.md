@@ -8,10 +8,10 @@ Flask Framework,
 Django Framework 
 
 Skills: 
-Object-oriented programming
-Object Relational Mapping
-Understanding routing in Flask & Django 
-Executing full CRUD 
+Object-oriented programming,
+Object Relational Mapping,
+Understanding routing in Flask & Django, 
+Executing full CRUD, 
 Log In & Registration with Validations
 
 Course Schedule: 
